@@ -1,8 +1,16 @@
 .user_card {
   background-color: $whiteColor;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 10px;
   width: 100%;
-  max-width: 328px;
+  max-width: 100%;
+  @include media("m") {
+    width: calc((100% - 16px) / 2);
+  }
+  @include media("l") {
+    width: calc((100% - 58px) / 3);
+  }
 }
 .userpic_wrapper {
   margin: 0 auto;
@@ -12,7 +20,10 @@
   height: 70px;
   margin-bottom: 20px;
 }
-
+.user_desc {
+  padding-left: 20px;
+  padding-right: 20px;
+}
 .text {
   text-overflow: ellipsis;
   white-space: nowrap;
