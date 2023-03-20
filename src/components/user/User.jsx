@@ -10,10 +10,10 @@ const User = ({ user }) => {
         <img className="userpic" src={photo} alt="userpic" />
       </div>
       <div className="user_desc">
-        <p>{name}</p>
-        <p>{position}</p>
-        <p>{email}</p>
-        <p>{properNumber}</p>
+        <p className="user_name">{name}</p>
+        <p className="text">{position}</p>
+        <p className="text">{email}</p>
+        <p className="text">{properNumber}</p>
       </div>
     </li>
   );

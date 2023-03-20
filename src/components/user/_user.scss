@@ -1,0 +1,24 @@
+.user_card {
+  background-color: $whiteColor;
+  padding: 20px;
+  width: 100%;
+  max-width: 328px;
+}
+.userpic_wrapper {
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  margin-bottom: 20px;
+}
+
+.text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.user_name {
+  @extend .text;
+  margin-bottom: 20px;
+}
