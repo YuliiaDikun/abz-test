@@ -51,4 +51,4 @@ const getPositions = async () => {
   }
 };
 
-export { getCourses, getCourseById };
+export { getUsers, registerUser, getUserById, getPositions };
