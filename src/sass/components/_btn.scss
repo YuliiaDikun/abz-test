@@ -1,0 +1,18 @@
+.btn {
+  @include flex(inline-flex, center, center);
+  width: 100px;
+  height: 34px;
+  @include font(400, 16, 26);
+  background-color: $primaryColor;
+  color: $blackTextColor;
+  border-radius: 80px;
+  cursor: pointer;
+  transition: background-color 0.25s, color 0.25s;
+  &:hover {
+    background-color: $btnHoverColor;
+  }
+  &:disabled {
+    background-color: $gisabledColor;
+    color: $whiteOpacityColor;
+  }
+}

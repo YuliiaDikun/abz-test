@@ -1,0 +1,16 @@
+.header {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  background-color: $whiteColor;
+}
+
+.header_nav {
+  @include flex(flex, center, space-between);
+}
+.nav_btn {
+  @include flex(flex, center, space-between);
+  gap: 4px;
+  @include media("s") {
+    gap: 10px;
+  }
+}

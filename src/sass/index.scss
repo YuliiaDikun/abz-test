@@ -1,5 +1,10 @@
 @import "./utils/variables";
-@import "./utils/mixin";
+@import "./utils/mixins";
 
+@import "./base/reset";
 @import "./base/typography"; //body common styles
 @import "./base/container";
+
+@import "../components/header/header";
+
+@import "./components/btn";
