@@ -9,13 +9,27 @@ function App() {
   const [page, setPage] = useState(1);
   const [isNextPageExists, setIsNextPageExists] = useState(true);
 
+ useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const res = await getUsers();       
+        const users = res.users;
+        setUsers(users);
+        
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchUsers();
+  }, []);
+
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         const res = await getUsers(page);
         const nextPage = res.links.next_url;
         const users = res.users;
-        setUsers(users);
+        setUsers(prev=> [...prev, ...users]);
         nextPage ? setIsNextPageExists(true) : setIsNextPageExists(false);
       } catch (error) {
         console.log(error);
