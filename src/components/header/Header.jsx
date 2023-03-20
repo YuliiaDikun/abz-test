@@ -9,12 +9,12 @@ const Header = () => {
 
           <ul className="nav_btn">
             <li>
-              <a className="btn" href="#users">
+              <a className="btn" href="#users" aria-label="link to users">
                 Users
               </a>
             </li>
             <li>
-              <a className="btn" href="#reg">
+              <a className="btn" href="#reg" aria-label="link to registration form">
                 Sign up
               </a>
             </li>

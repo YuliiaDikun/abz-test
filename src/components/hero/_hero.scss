@@ -1,0 +1,91 @@
+.hero {
+  padding-top: 40px;
+  padding-bottom: 70px;
+  text-align: center;
+  background-color: $blackOpacityColor;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("../../assets/bg/bg-s.jpg");
+  background-repeat: no-repeat;
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url("../../assets/bg/bg-s@2x.jpg");
+  }
+
+  @include media("m") {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url("../../assets/bg/bg-m.jpg");
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)
+        ),
+        url("../../assets/bg/bg-m@2x.jpg");
+    }
+  }
+
+  @include media("l") {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url("../../assets/bg/bg-l.jpg");
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)
+        ),
+        url("../../assets/bg/bg-l@2x.jpg");
+    }
+  }
+  @include media("xl") {
+    background-image: url("../../assets/bg/bg-xl.jpg");
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)
+        ),
+        url("../../assets/bg/bg-xl@2x.jpg");
+    }
+  }
+}
+
+.hero_title {
+  @include font(400, 40, 40);
+  margin-bottom: 21px;
+  color: $whiteOpacityColor;
+}
+
+.hero_descr {
+  color: $whiteOpacityColor;
+  margin-bottom: 32px;
+}
