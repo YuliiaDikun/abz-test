@@ -3,7 +3,7 @@ import { getUsers } from "./services/abzAPI";
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
 import Users from "./components/Users/Users";
-
+import Form from "./components/form/Form";
 function App() {
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
@@ -43,6 +43,7 @@ function App() {
       <main>
         <Hero />
         <Users users={users} isBtnActive={isNextPageExists} setPage={setPage} />
+        <Form/>
       </main>
     </>
   );

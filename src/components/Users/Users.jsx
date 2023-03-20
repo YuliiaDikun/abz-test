@@ -5,7 +5,7 @@ const Users = ({ users, isNextPageExists, setPage }) => {
   return (
     <section className="users_section">
       <div className="container">
-        <h2 className="user_title">Working with GET request</h2>
+        <h2 className="title">Working with GET request</h2>
         <ul className="user_list">
           {users.map((user) => (
             <User key={user.id} user={user} />

@@ -3,10 +3,6 @@
   padding-bottom: 70px;
   text-align: center;
 }
-.user_title {
-  @include font(400, 40, 40);
-  margin-bottom: 50px;
-}
 
 .user_list {
   @include flex(flex, center, center);
