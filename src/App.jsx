@@ -14,8 +14,7 @@ function App() {
       try {
         const res = await getUsers();       
         const users = res.users;
-        setUsers(users);
-        
+        setUsers(users);        
       } catch (error) {
         console.log(error);
       }
@@ -35,8 +34,11 @@ function App() {
         console.log(error);
       }
     };
-    fetchUsers();
+   page > 1 && fetchUsers();
   }, [page]);
+
+
+  
   return (
     <>
       <Header />

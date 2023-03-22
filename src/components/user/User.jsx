@@ -1,9 +1,8 @@
 import React from "react";
-import { formatPhoneNumber } from "../../services/formatPhoneNumber";
+import { formatPhoneNumber } from "../../utils/formatPhoneNumber";
 const User = ({ user }) => {
   const { email, name, phone, photo, position } = user;
-  const properNumber = formatPhoneNumber(phone);
-  console.log(properNumber);
+  const properNumber = formatPhoneNumber(phone);  
   return (
     <li className="user_card">
       <div className="userpic_wrapper">
