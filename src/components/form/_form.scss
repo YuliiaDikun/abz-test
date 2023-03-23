@@ -16,7 +16,7 @@
   top: 10px;
   left: 16px;
   color: $gisabledColor;
-  transition: top 0.2s, background-color 0.2s, font-size 0.2s;
+  transition: top 0.2s, background-color 0.2s, font-size 0.2s, color 0.2s;
 }
 .input {
   padding-left: 16px;
@@ -33,4 +33,24 @@
     background-color: $bgColor;
     @include font(500, 12, 14);
   }
+  &.error {
+    border-color: $errorColor;
+    &:focus + .label,
+    &:not(:placeholder-shown) + .label {
+      top: -7px;
+      background-color: $bgColor;
+      @include font(500, 12, 14);
+      color: $errorColor;
+    }
+  }
+}
+
+.errorText {
+  position: absolute;
+  bottom: -14px;
+  left: 16px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: $errorColor;
 }
