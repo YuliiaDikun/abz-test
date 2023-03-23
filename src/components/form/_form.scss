@@ -18,6 +18,7 @@
   color: $gisabledColor;
   transition: top 0.2s, background-color 0.2s, font-size 0.2s, color 0.2s;
 }
+
 .input {
   padding-left: 16px;
   padding-top: 14px;
@@ -47,10 +48,44 @@
 
 .errorText {
   position: absolute;
-  bottom: -14px;
+  bottom: -15px;
   left: 16px;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
+  @include font(400, 12, 14);
   color: $errorColor;
+}
+
+.maskText {
+  position: absolute;
+  bottom: -15px;
+  left: 16px;
+  @include font(400, 12, 14);
+  color: $gisabledColor;
+}
+
+.select_title {
+  text-align: left;
+}
+
+.select_group {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.check_label {
+  padding-left: 32px;
+}
+
+.check_box {
+  position: absolute;
+  margin-top: 3px;
+  margin-left: -32px;
+  width: 20px;
+  height: 20px;
+  background-image: url("../../assets/check.svg");
+}
+
+.check_input:checked + .check_box {
+  background-image: url("../../assets/checked.svg");
 }

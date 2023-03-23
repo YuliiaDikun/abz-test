@@ -89,7 +89,7 @@ const Form = () => {
             </div>
             <div className="form_wrapper">
               <input
-               className={`input ${
+                className={`input ${
                   errors.name && touched.name ? "error" : ""
                 } `}
                 type="phone"
@@ -102,22 +102,33 @@ const Form = () => {
               <label htmlFor="phone" className="label">
                 Phone
               </label>
+              {!errors.phone && !touched.phone && (
+                <p className="maskText">+38 (XXX) XXX - XX - XX</p>
+              )}
               {errors.phone && touched.phone && (
                 <p className="errorText">{errors.phone}</p>
               )}
             </div>
             <div className="form_wrapper">
-              <p id="position_id">Select your position</p>
-              <div role="group" aria-labelledby="position_id">
+              <p id="position_id" className="select_title">
+                Select your position
+              </p>
+              <div
+                role="group"
+                aria-labelledby="position_id"
+                className="select_group"
+              >
                 {position.map((p) => (
-                  <label key={p.id}>
+                  <label key={p.id} className="check_label">
                     <Field
+                      className="check_input visually-hidden"
                       type="radio"
                       name="position_id"
                       id={p.id}
                       value={p.id}
                       onChange={() => setFieldValue("position_id", p.id)}
                     />
+                    <span className="check_box"></span>                    
                     {p.name}
                   </label>
                 ))}
