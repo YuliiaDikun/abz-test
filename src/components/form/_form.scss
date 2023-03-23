@@ -64,6 +64,7 @@
 
 .select_title {
   text-align: left;
+  margin-bottom: 11px;
 }
 
 .select_group {
@@ -88,4 +89,30 @@
 
 .check_input:checked + .check_box {
   background-image: url("../../assets/checked.svg");
+}
+
+.upload_wrapper {
+  display: flex;
+  margin-bottom: 50px;
+}
+.upload_btn {
+  padding: 14px 15px;
+  color: $blackTextColor;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.87);
+  border-radius: 4px 0px 0px 4px;
+}
+
+.upload_text {
+  width: 100%;
+  text-align: left;
+  color: $gisabledColor;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 16px;
+  border-top: 1px solid $borderColor;
+  border-bottom: 1px solid $borderColor;
+  border-right: 1px solid $borderColor;
+  border-left: 1px solid transparent;
+  border-radius: 0px 4px 4px 0px;
 }

@@ -137,7 +137,7 @@ const Form = () => {
                 <p>{errors.position_id}</p>
               )}
             </div>
-            <div className="form_wrapper">
+            <div className="upload_wrapper">
               <input
                 ref={fileRef}
                 type="file"
@@ -148,18 +148,18 @@ const Form = () => {
                   setFieldValue("photo", event.currentTarget.files[0]);
                 }}
               />
-              <button type="button" onClick={() => fileRef.current.click()}>
+              <button type="button" className="upload_btn" onClick={() => fileRef.current.click()}>
                 Upload
               </button>
               {values.photo ? (
-                <p>Selected file: {values.photo.name}</p>
+                <p className="upload_text">Selected file: {values.photo.name}</p>
               ) : (
-                <p>Upload your photo</p>
+                <p className="upload_text">Upload your photo</p>
               )}
               {errors.photo && touched.photo && <p>{errors.photo}</p>}
             </div>
 
-            <button className="btn" type="submit">
+            <button className="btn" type="submit" > 
               Submit
             </button>
           </form>
