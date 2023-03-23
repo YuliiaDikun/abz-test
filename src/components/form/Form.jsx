@@ -48,7 +48,7 @@ const Form = () => {
       <div className="container">
         <h2 className="title">Working with POST request</h2>
         <FormikProvider value={formik}>
-          <form autoComplete="off" onSubmit={handleSubmit}>
+          <form autoComplete="off" onSubmit={handleSubmit} className="form">
             <div className="form_wrapper">
               <input
                 className={`input ${
@@ -159,7 +159,7 @@ const Form = () => {
               {errors.photo && touched.photo && <p>{errors.photo}</p>}
             </div>
 
-            <button className="btn" type="submit" > 
+            <button className="btn"  type="submit" > 
               Submit
             </button>
           </form>
