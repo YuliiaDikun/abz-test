@@ -47,12 +47,11 @@ const Form = () => {
     <section className="form_section">
       <div className="container">
         <h2 className="title">Working with POST request</h2>
-      </div>
-      <FormikProvider value={formik}>
+        <FormikProvider value={formik}>
         <form autoComplete="off" onSubmit={handleSubmit}>
-          <div>
+          <div className="form_wrapper">
             <input
-              autoComplete="off"
+              className="input"
               type="name"
               name="name"
               id="name"
@@ -60,12 +59,12 @@ const Form = () => {
               value={values.name}
               onChange={handleChange}
             />
-            <label htmlFor="name">Your name</label>
+            <label htmlFor="name" className="label">Your name</label>
             {errors.name && touched.name && <p>{errors.name}</p>}
           </div>
-          <div>
+          <div className="form_wrapper">
             <input
-              autoComplete="off"
+              className="input"
               type="email"
               name="email"
               id="email"
@@ -73,12 +72,12 @@ const Form = () => {
               value={values.email}
               onChange={handleChange}
             />
-            <label htmlFor="email">E-mail</label>
+            <label htmlFor="email" className="label">E-mail</label>
             {errors.email && touched.email && <p>{errors.email}</p>}
           </div>
-          <div>
-            <input
-              autoComplete="off"
+          <div className="form_wrapper">
+              <input    
+            className="input"    
               type="phone"
               name="phone"
               id="phone"
@@ -86,10 +85,10 @@ const Form = () => {
               value={values.phone}
               onChange={handleChange}
             />
-            <label htmlFor="phone">Phone</label>
+            <label htmlFor="phone" className="label">Phone</label>
             {errors.phone && touched.phone && <p>{errors.phone}</p>}
           </div>
-          <div>
+          <div className="form_wrapper">
             <p id="position_id">Select your position</p>
             <div role="group" aria-labelledby="position_id">
               {position.map((p) => (
@@ -109,13 +108,13 @@ const Form = () => {
               <p>{errors.position_id}</p>
             )}
           </div>
-          <div>
+          <div className="form_wrapper">
             <input
               ref={fileRef}
               type="file"
               hidden
               name="photo"
-              autoComplete="off"
+              
               accept=".jpg,.jpeg"
               onChange={(event) => {
                 setFieldValue("photo", event.currentTarget.files[0]);
@@ -137,6 +136,8 @@ const Form = () => {
           </button>
         </form>
       </FormikProvider>
+      </div>
+      
     </section>
   );
 };
