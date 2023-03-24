@@ -96,7 +96,7 @@
   color: $whiteOpacityColor;
   @include media("m") {
     max-width: 380px;
-    margin: 0 auto;
+    margin: 0 auto 21px auto;
   }
 }
 
@@ -105,6 +105,6 @@
   margin-bottom: 32px;
   @include media("m") {
     max-width: 380px;
-    margin: 0 auto;
+    margin: 0 auto 32px auto;
   }
 }

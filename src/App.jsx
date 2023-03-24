@@ -2,13 +2,15 @@ import { useState, useEffect } from "react";
 import { getUsers } from "./services/abzAPI";
 import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
- import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
+import Loader from './components/loader/Loader';
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
-import Users from "./components/Users/Users";
+import Users from "./components/users/Users";
 import Form from "./components/form/Form";
 function App() {
   const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [isNextPageExists, setIsNextPageExists] = useState(true);
 
@@ -20,12 +22,15 @@ function App() {
         setUsers(users);        
       } catch (error) {
         toast.error(error.message);
+      } finally { 
+        setIsLoading(false);
       }
     };   
    fetchUsers();  
   }, []);
 
   useEffect(() => {
+    setIsLoading(true);
     const fetchUsersinNextPage = async () => {
       try {
         const res = await getUsers(page);
@@ -35,6 +40,8 @@ function App() {
         nextPage ? setIsNextPageExists(true) : setIsNextPageExists(false);
       } catch (error) {
        toast.error(error.message);
+      } finally { 
+        setIsLoading(false);
       }
     };
    page > 1 && fetchUsersinNextPage();
@@ -46,6 +53,7 @@ function App() {
   }
   return (
     <>
+      { isLoading && <Loader/>}
       <Header />
       <main>
         <Hero />

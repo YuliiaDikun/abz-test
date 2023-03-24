@@ -2,12 +2,14 @@ import React, { useEffect, useState, useRef } from "react";
 import { getPositions, registerUser, getUsers } from "../../services/abzAPI";
 import { useFormik, Field, FormikProvider } from "formik";
 import { userSchema } from "../../utils/validationSchema";
-import successImg from "../../assets/success-image.svg";
+import sprite from "../../assets/sprite.svg";
+import Loader from "../loader/Loader";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Form = ({ updateUsers }) => {
   const [position, setPosition] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [isRegisterSuccess, setIsRegisterSuccess] = useState(false);
   const fileRef = useRef(null);
 
@@ -36,6 +38,7 @@ const Form = ({ updateUsers }) => {
       { name, email, phone, position_id, photo },
       { resetForm }
     ) => {
+      setIsLoading(true);
       const formData = new FormData();
       formData.append("name", name);
       formData.append("email", email);
@@ -53,7 +56,9 @@ const Form = ({ updateUsers }) => {
           updateUsers(response.users);
         }
       } catch (error) {
-        console.log(error);
+        toast.error(error.message);
+      } finally { 
+        setIsLoading(false);
       }
       resetForm();
     },
@@ -65,6 +70,7 @@ const Form = ({ updateUsers }) => {
 
   return (
     <section className="form_section">
+      { isLoading && <Loader/>}
       <div className="container">
         {isRegisterSuccess ? (
           <h2 className="title">User successfully registered</h2>
@@ -74,7 +80,9 @@ const Form = ({ updateUsers }) => {
 
         {isRegisterSuccess ? (
           <div className="success-img_container">
-            <img src={successImg} alt="successful user registration" />
+            <svg>
+              <use href={`${sprite}#icon-success-image`}></use>
+            </svg>
           </div>
         ) : (
           <FormikProvider value={formik}>
