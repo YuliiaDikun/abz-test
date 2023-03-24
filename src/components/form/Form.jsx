@@ -128,7 +128,7 @@ const Form = () => {
                       value={p.id}
                       onChange={() => setFieldValue("position_id", p.id)}
                     />
-                    <span className="check_box"></span>                    
+                    <span className="check_box"></span>
                     {p.name}
                   </label>
                 ))}
@@ -148,20 +148,36 @@ const Form = () => {
                   setFieldValue("photo", event.currentTarget.files[0]);
                 }}
               />
-              <button type="button" className="upload_btn" onClick={() => fileRef.current.click()}>
+              <button
+                type="button"
+                className="upload_btn"
+                onClick={() => fileRef.current.click()}
+              >
                 Upload
               </button>
               {values.photo ? (
-                <p className="upload_text">Selected file: {values.photo.name}</p>
+                <p className="upload_text">
+                  Selected file: {values.photo.name}
+                </p>
               ) : (
                 <p className="upload_text">Upload your photo</p>
               )}
               {errors.photo && touched.photo && <p>{errors.photo}</p>}
             </div>
 
-            <button className="btn"  type="submit" > 
-              Submit
-            </button>
+            {values.email &&
+            values.name &&
+            values.phone &&
+            values.position_id &&
+            values.photo ? (
+              <button className="btn" type="submit">
+                Submit
+              </button>
+            ) : (
+              <button className="btn" type="submit" disabled>
+                Submit
+              </button>
+            )}
           </form>
         </FormikProvider>
       </div>
