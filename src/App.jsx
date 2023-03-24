@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { getUsers } from "./services/abzAPI";
+import { ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
+ import 'react-toastify/dist/ReactToastify.css';
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
 import Users from "./components/Users/Users";
@@ -16,7 +19,7 @@ function App() {
         const users = res.users;
         setUsers(users);        
       } catch (error) {
-        console.log(error);
+        toast.error(error.message);
       }
     };   
    fetchUsers();  
@@ -31,12 +34,12 @@ function App() {
         setUsers(prev=> [...prev, ...users]);
         nextPage ? setIsNextPageExists(true) : setIsNextPageExists(false);
       } catch (error) {
-        console.log(error);
+       toast.error(error.message);
       }
     };
    page > 1 && fetchUsersinNextPage();
   }, [page]);
-  
+
   const updateUsers = (users) => { 
     setUsers(users);
     setPage(1);
@@ -49,6 +52,11 @@ function App() {
         <Users users={users} isBtnActive={isNextPageExists} setPage={setPage} />
         <Form updateUsers={updateUsers } />
       </main>
+      <ToastContainer
+          autoClose={2000}
+          hideProgressBar={true}
+          position="top-right"
+        />
     </>
   );
 }
