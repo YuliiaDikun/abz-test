@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+# ABZ.agency test task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Source data
 
-In the project directory, you can run:
+- Technical assignment located - [link](https://drive.google.com/file/d/11XPGP9wrHB-B5aLlBCRLXHVA2yvM2QhY/view)
+- Figma design project - [link](https://www.figma.com/file/ykJhQGVFGbQBEQZzuktwvm/TESTTASK---2022?node-id=581-0&t=lG51agEAYtfaHvjM-0)
 
-### `npm start`
+## Technology stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This is a single-page React application that consists of three blocks. SASS/SCSS preprocessor was used for styling.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To improve server requests handling, the axios library was used. To enhance the user experience, the react-toastify library was added to display status messages and notify in case of errors, as well as the react-loader-spinner for creating a Loader component.
 
-### `npm test`
+To improve the form handling, formik was used, which provides internal validation for all fields and controls the states in the React component.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+For ease of form validation, yup was utilized in combination with formik, which is considered to be one of the most effective libraries for handling forms in a React application.
 
-### `npm run build`
+The combination of formik and yup is one of the best combinations for working with forms in a React application.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For hosting the application, gh-pages was used and deployed on the GitHub hosting.
