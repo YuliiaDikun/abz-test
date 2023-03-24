@@ -9,14 +9,14 @@ This project was created with [Create React App](https://github.com/facebook/cre
 
 ## Technology stack
 
-This is a single-page React application that consists of three blocks. SASS/SCSS preprocessor was used for styling.
+This is a **single-page React application** that consists of three blocks. **SASS/SCSS** preprocessor was used for styling.
 
-To improve server requests handling, the axios library was used. To enhance the user experience, the react-toastify library was added to display status messages and notify in case of errors, as well as the react-loader-spinner for creating a Loader component.
+To improve server requests handling, the **axios** library was used. To enhance the user experience, the **react-toastify** library was added to display status messages and notify in case of errors, as well as the **react-loader-spinner** for creating a Loader component.
 
-To improve the form handling, formik was used, which provides internal validation for all fields and controls the states in the React component.
+To improve the form handling, **formik** library was used, which provides internal validation for all fields and controls the states in the React component.
 
-For ease of form validation, yup was utilized in combination with formik, which is considered to be one of the most effective libraries for handling forms in a React application.
+For ease of form validation, **yup** library was utilized in combination with formik, which is considered to be one of the most effective libraries for handling forms in a React application.
 
-The combination of formik and yup is one of the best combinations for working with forms in a React application.
+The combination of **formik and yup** is one of the best combinations for working with forms in a React application.
 
-For hosting the application, gh-pages was used and deployed on the GitHub hosting.
+For hosting the application, **gh-pages** library was used and deployed on the GitHub hosting.
