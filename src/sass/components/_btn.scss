@@ -15,4 +15,7 @@
     background-color: $gisabledColor;
     color: $whiteOpacityColor;
   }
+  &.main {
+    width: 120px;
+  }
 }

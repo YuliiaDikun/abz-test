@@ -15,7 +15,7 @@ const Users = ({ users, isNextPageExists, setPage }) => {
         <button
           type="button"
           disabled={!{ isNextPageExists }}
-          className="btn"
+          className="btn main"
           aria-label="show more user button"
           onClick={() => setPage((prev) => prev + 1)}
         >
