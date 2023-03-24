@@ -2,7 +2,7 @@ import axios from "axios";
 const BASE_URL = "https://frontend-test-assignment-api.abz.agency/api/v1";
 axios.defaults.baseURL = `${BASE_URL}`;
 const setToken = (token) => {
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  axios.defaults.headers.Token = `${token}`;
 };
 
 const getToken = async () => {

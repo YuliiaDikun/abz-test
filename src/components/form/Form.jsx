@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
-import { getPositions } from "../../services/abzAPI";
+import { getPositions, registerUser, getUsers } from "../../services/abzAPI";
 import { useFormik, Field, FormikProvider } from "formik";
 import { userSchema } from "../../utils/validationSchema";
-const Form = () => {
+const Form = ({ updateUsers }) => {
   const [position, setPosition] = useState([]);
   const fileRef = useRef(null);
   useEffect(() => {
@@ -16,7 +16,7 @@ const Form = () => {
       }
     };
     getAllPosition();
-  }, []);
+  }, []); 
 
   const formik = useFormik({
     initialValues: {
@@ -24,17 +24,29 @@ const Form = () => {
       email: "",
       phone: "",
       position_id: "",
-      photo: null,
+      photo: "",
     },
-    onSubmit: ({ name, email, phone, position_id, photo }, { resetForm }) => {
-      const user = {
-        name,
-        email,
-        phone,
-        position_id,
-        photo,
-      };
-      console.log(user);
+    onSubmit: async (
+      { name, email, phone, position_id, photo },
+      { resetForm }
+    ) => {
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("phone", phone);
+      formData.append("position_id", position_id);
+      formData.append("photo", photo);
+      
+      try {
+        const res = await registerUser(formData);
+        console.log(res);
+        if (res.success) {
+          const res = await getUsers();
+          updateUsers(res.users);          
+        }
+      } catch (error) {
+        console.log(error);
+      }
       resetForm();
     },
     validationSchema: userSchema,
@@ -91,7 +103,7 @@ const Form = () => {
               <input
                 className={`input ${
                   errors.name && touched.name ? "error" : ""
-                } `}
+                }`}
                 type="phone"
                 name="phone"
                 id="phone"
@@ -143,7 +155,6 @@ const Form = () => {
                 type="file"
                 hidden
                 name="photo"
-                accept=".jpg,.jpeg"
                 onChange={(event) => {
                   setFieldValue("photo", event.currentTarget.files[0]);
                 }}

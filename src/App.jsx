@@ -18,12 +18,12 @@ function App() {
       } catch (error) {
         console.log(error);
       }
-    };
-    fetchUsers();
+    };   
+   fetchUsers();  
   }, []);
 
   useEffect(() => {
-    const fetchUsers = async () => {
+    const fetchUsersinNextPage = async () => {
       try {
         const res = await getUsers(page);
         const nextPage = res.links.next_url;
@@ -34,18 +34,20 @@ function App() {
         console.log(error);
       }
     };
-   page > 1 && fetchUsers();
+   page > 1 && fetchUsersinNextPage();
   }, [page]);
-
-
   
+  const updateUsers = (users) => { 
+    setUsers(users);
+    setPage(1);
+  }
   return (
     <>
       <Header />
       <main>
         <Hero />
         <Users users={users} isBtnActive={isNextPageExists} setPage={setPage} />
-        <Form/>
+        <Form updateUsers={updateUsers } />
       </main>
     </>
   );
