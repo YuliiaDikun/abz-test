@@ -14,8 +14,7 @@
   max-width: 328px;
 }
 .form_wrapper {
-  display: flex;
-  flex-direction: column;
+  @include flex(flex, stretch, center, column);
   position: relative;
   margin-bottom: 50px;
 }
@@ -32,9 +31,9 @@
   padding-left: 16px;
   padding-top: 14px;
   padding-bottom: 14px;
-  background: $bgColor;
+  background-color: $bgColor;
   color: $blackTextColor;
-  border: 1px solid #d0cfcf;
+  border: 1px solid $borderColor;
   border-radius: 4px;
   outline: none;
   &:focus + .label,
@@ -77,9 +76,7 @@
 }
 
 .select_group {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
+  @include flex(flex, flex-start, center, column);
   gap: 7px;
 }
 

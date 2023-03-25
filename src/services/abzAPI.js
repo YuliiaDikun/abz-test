@@ -1,7 +1,9 @@
 import axios from "axios";
 import { toast } from "react-toastify";
+
 const BASE_URL = "https://frontend-test-assignment-api.abz.agency/api/v1";
 axios.defaults.baseURL = `${BASE_URL}`;
+
 const setToken = (token) => {
   axios.defaults.headers.Token = `${token}`;
 };
